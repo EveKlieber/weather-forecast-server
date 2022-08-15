@@ -6,19 +6,24 @@ import { getCity } from "./helpers/helper.js";
 
 const app = express();
 
+
+// var bodyParser = require('body-parser')
+
 const port = process.env.PORT || 8080;
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "*",
     // credentials: true
   })
 );
 
+// app.use(bodyParser.json());
+
 // const server = createServer(app);
 
 app.get("/", (req, res) => {
-  res.send("hello");
+  res.send('Weather forecast Backend');
 });
 
 app.use(router);
